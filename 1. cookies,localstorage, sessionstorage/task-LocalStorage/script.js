@@ -7,6 +7,7 @@ const clean = document.getElementById('clear')
 area.value = localStorage.getItem('textArea')
 
 //oninput ??
+// Solution with 'change' will not works in case you add changes, not changing focus from textarea and refresh page. Last change will not be save.
 area.addEventListener('change', event => {
     localStorage.setItem('textArea', area.value)
 })
