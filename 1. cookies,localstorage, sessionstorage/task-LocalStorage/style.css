@@ -1,0 +1,18 @@
+textarea {
+    width:200px;
+    height: 100px;
+ }
+ button {
+    background-color: #ff000d;
+    cursor: pointer;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    border: none;
+ }
+ button :hover {
+     background-color: #680308;
+    }
