@@ -5,11 +5,11 @@ const inputStorage = window.localStorage;
 
 area.value = inputStorage.getItem(textArea);
 
-area.addEventListener("input", (event) => {
+area.addEventListener("input", () => {
   inputStorage.setItem(textArea, area.value);
 });
 
-clean.addEventListener("click", (event) => {
+clean.addEventListener("click", () => {
   inputStorage.removeItem(textArea);
   area.value = "";
 });
