@@ -1,17 +1,15 @@
-const area = document.getElementById('area')
-const clean = document.getElementById('clear')
+const area = document.querySelector(".area");
+const clean = document.querySelector(".clear");
+const textArea = "textArea";
+const inputStorage = window.localStorage;
 
-area.value = localStorage.getItem('textArea')
+area.value = inputStorage.getItem(textArea);
 
-//oninput ??
-area.addEventListener('change', event => {
-    localStorage.setItem('textArea', area.value)
-})
+area.addEventListener("input", () => {
+  inputStorage.setItem(textArea, area.value);
+});
 
-clean.addEventListener('click', event => {
-    localStorage.removeItem('textArea')
-    area.value = ''
-})
-
-
-
+clean.addEventListener("click", () => {
+  inputStorage.removeItem(textArea);
+  area.value = "";
+});
