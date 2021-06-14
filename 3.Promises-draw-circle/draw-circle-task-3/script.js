@@ -3,11 +3,6 @@ function setWidthAndHeight(element, sizePx) {
   element.style.width = `${sizePx}px`;
 }
 
-function makeSquare(element, sizePx, radius) {
-  element.style.width = radius * sizePx + "px";
-  element.style.height = radius * sizePx + "px";
-}
-
 function showCircle(cx, cy, radius) {
   let div = document.createElement("div");
   setWidthAndHeight(div, 0);
@@ -18,7 +13,7 @@ function showCircle(cx, cy, radius) {
 
   return new Promise((resolve) => {
     setTimeout(() => {
-      makeSquare(div, 2, radius);
+      setWidthAndHeight(div, radius * 2);
       div.addEventListener("transitionend", () => resolve(div));
     });
   }).then((value) => {
