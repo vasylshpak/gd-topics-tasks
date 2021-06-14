@@ -1,5 +1,5 @@
 function delay(ms) {
-  return new Promise(function (resolve, reject) {
+  return new Promise((resolve, reject) => {
     if (ms < 0) return reject(new Error("Value must be positive"));
     setTimeout(() => resolve("Done"), ms);
   });
