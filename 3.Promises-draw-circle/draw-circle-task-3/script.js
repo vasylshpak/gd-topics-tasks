@@ -1,7 +1,16 @@
+function setWidthAndHeight(element, sizePx) {
+  element.style.height = `${sizePx}px`;
+  element.style.width = `${sizePx}px`;
+}
+
+function makeSquare(element, sizePx, radius) {
+  element.style.width = radius * sizePx + "px";
+  element.style.height = radius * sizePx + "px";
+}
+
 function showCircle(cx, cy, radius) {
   let div = document.createElement("div");
-  div.style.width = 0;
-  div.style.height = 0;
+  setWidthAndHeight(div, 0);
   div.style.left = cx + "px";
   div.style.top = cy + "px";
   div.className = "circle";
@@ -9,8 +18,7 @@ function showCircle(cx, cy, radius) {
 
   return new Promise((resolve) => {
     setTimeout(() => {
-      div.style.width = radius * 2 + "px";
-      div.style.height = radius * 2 + "px";
+      makeSquare(div, 2, radius);
       div.addEventListener("transitionend", () => resolve(div));
     });
   }).then((value) => {
