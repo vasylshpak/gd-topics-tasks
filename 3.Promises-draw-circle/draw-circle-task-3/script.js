@@ -13,8 +13,8 @@ function showCircle(cx, cy, radius) {
       div.style.height = radius * 2 + "px";
       div.addEventListener("transitionend", () => resolve(div));
     });
-  }).then((div) => {
-    div.classList.add("message");
-    div.append("Hello, world!");
+  }).then((value) => {
+    value.classList.add("message");
+    value.append("Hello, world!");
   });
 }
